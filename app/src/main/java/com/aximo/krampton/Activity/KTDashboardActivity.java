@@ -43,7 +43,7 @@ public class KTDashboardActivity extends AppCompatActivity {
     ArrayList<MainModuleModel> modal;
 
     String[] Navimenu = {"Task List","Change Password","Attandance(only for female)", "Privacy & Policy", "Get Help","Log Out"};
-    int[] Naviimage = { R.drawable.menuicon, R.drawable.menuicon, R.drawable.menuicon,R.drawable.menuicon,R.drawable.menuicon,R.drawable.menuicon};
+    int[] Naviimage = { R.drawable.audio_download_complete, R.drawable.audio_download_complete, R.drawable.audio_download_complete,R.drawable.audio_download_complete,R.drawable.audio_download_complete,R.drawable.audio_download_complete};
     ArrayList<MainActivityModel> modal2;
 
 

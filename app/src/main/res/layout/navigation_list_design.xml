@@ -16,7 +16,9 @@
         android:layout_margin="5dp"
         android:clickable="false"
         android:focusable="false"
+        android:backgroundTint="@color/colorPrimary"
         android:focusableInTouchMode="false"
+        android:src="@drawable/audio_download_complete"
         android:gravity="center_vertical" />
 
     <TextView
