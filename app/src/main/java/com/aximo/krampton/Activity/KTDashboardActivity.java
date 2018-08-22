@@ -11,7 +11,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.aximo.krampton.Activity.Adapter.KTMainActivityAdapter;
 import com.aximo.krampton.Activity.Adapter.MainModuleAdapter;
+import com.aximo.krampton.Activity.Model.MainActivityModel;
 import com.aximo.krampton.Activity.Model.MainModuleModel;
 import com.aximo.krampton.Activity.Util.ExpandableHeightGridView;
 import com.aximo.krampton.R;
@@ -23,6 +25,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class KTDashboardActivity extends AppCompatActivity {
     MainModuleAdapter mainModuleAdapter;
     MainModuleModel mainModuleModel;
+    private ArrayList<MainActivityModel> activityModel_all;
+    private KTMainActivityAdapter mainActivityAdapter;
     ArrayList<MainModuleModel> mainModuleModel_all;
     ExpandableHeightGridView dash_board_module_grid;
     ArrayList<String> counter;
@@ -32,11 +36,15 @@ public class KTDashboardActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     ImageView dash_home;
-    TextView profile_pics;
+    ImageView profile_pics;
     String[] name = {"New Task List", "Pending Task List", "Completed task List"};
     String[] count = {"10", "15", "18"};
     int[] image = {R.mipmap.vbo_down_line_icon, R.mipmap.vbo_down_line_icon, R.mipmap.vbo_down_line_icon};
     ArrayList<MainModuleModel> modal;
+
+    String[] Navimenu = {"Task List","Change Password","Attandance(only for female)", "Privacy & Policy", "Get Help","Log Out"};
+    int[] Naviimage = { R.drawable.menuicon, R.drawable.menuicon, R.drawable.menuicon,R.drawable.menuicon,R.drawable.menuicon,R.drawable.menuicon};
+    ArrayList<MainActivityModel> modal2;
 
 
     @Override
@@ -57,7 +65,16 @@ public class KTDashboardActivity extends AppCompatActivity {
             modal.add(mo);
         }
 
-        KT_profile_picture = findViewById(R.id.KT_profile_image);
+        activityModel_all = new ArrayList<>();
+        modal2 = new ArrayList<>();
+
+        for (int i = 0; i < 6; i++) {
+            MainActivityModel m2 = new MainActivityModel();
+            m2.setItemImage(Naviimage[i]);
+            m2.setItemName(Navimenu[i]);
+            modal2.add(m2);
+        }
+            KT_profile_picture = findViewById(R.id.KT_profile_image);
         KT_profile_id_name = findViewById(R.id.KT_profile_id_name);
         dash_board_module_grid = findViewById(R.id.dash_board_module_layout);
 
@@ -72,11 +89,24 @@ public class KTDashboardActivity extends AppCompatActivity {
         MainModuleAdapter mainModuleAdapter = new MainModuleAdapter(this, modal);
         dash_board_module_grid.setAdapter(mainModuleAdapter);
 
+        KTMainActivityAdapter ktMainActivityAdapter = new KTMainActivityAdapter(this, modal2);
+        mDrawerList.setAdapter(ktMainActivityAdapter);
+
+
+
+        mDrawerList.addHeaderView(header_layout);
+        mDrawerList.bringToFront();
         dash_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mDrawerLayout.openDrawer(Gravity.LEFT);
                 Log.e("DashHome", "Clicked");
+            }
+        });
+
+        profile_pics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
             }
         });
 

@@ -121,7 +121,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="75dp"
-                        android:text="Raushan Kumar"
+                        android:text="Drawn Johnson"
                         android:textColor="#ffffff"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -132,7 +132,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="10dp"
-                        android:text="963258741"
+                        android:text="+91 963258741"
                         android:textColor="#ffffff"
                         android:textSize="12sp"
                         android:textStyle="bold" />
