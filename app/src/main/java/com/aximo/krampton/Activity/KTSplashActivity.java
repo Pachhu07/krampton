@@ -38,7 +38,7 @@ import com.aximo.krampton.R;
                      }
                      if (progressStatus == 100) {
                         /* if(Assessee_Id.equals("")||Assessee_Id.equals(null)){*/
-                             Intent i = new Intent(KTSplashActivity.this, KTLoginActivity.class);
+                             Intent i = new Intent(KTSplashActivity.this, HotelLogin.class);
                              startActivity(i);finish();
                       /*   }else{
                              Intent i = new Intent(Splashscreen.this, DashBoard.class);
